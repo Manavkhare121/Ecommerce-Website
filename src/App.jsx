@@ -7,7 +7,8 @@ import Product from './components/Pages/Product';
 import Cart from './components/Pages/Cart';
 import Loginsignup from './components/Pages/Loginsignup';
 import './App.css';
-import Hero from './components/Hero/Hero';
+import Footer from './components/Footer/Footer';
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,7 +17,8 @@ function App() {
     <div>
       <BrowserRouter>
         <Navbar />
-        <Hero/>
+        
+        
         <Routes>
           <Route path='/' element={<Shop />} />
           <Route path='/mens' element={<ShopCategory category="mens" />} />
@@ -28,7 +30,9 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/loginsignup' element={<Loginsignup />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
+      
     </div>
   );
 }
