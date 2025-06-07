@@ -8,6 +8,9 @@ import Cart from './components/Pages/Cart';
 import Loginsignup from './components/Pages/Loginsignup';
 import './App.css';
 import Footer from './components/Footer/Footer';
+import men_banner from "./assets/banner.jpg"
+import women_banner from './assets/women_banner.avif'
+import kids_banner from './assets/kids_banner.jpg'
 
 
 function App() {
@@ -21,12 +24,12 @@ function App() {
         
         <Routes>
           <Route path='/' element={<Shop />} />
-          <Route path='/mens' element={<ShopCategory category="mens" />} />
-          <Route path='/womens' element={<ShopCategory category="womens" />} />
-          <Route path='/kids' element={<ShopCategory category="kids" />} />
+          <Route path='/mens' element={<ShopCategory banner={men_banner}category="men" />} />
+          <Route path='/womens' element={<ShopCategory banner={women_banner} category="women" />} />
+          <Route path='/kids' element={<ShopCategory banner={kids_banner}category="kid" />} />
           
           <Route path='/product' element={<Product />} />
-          <Route path='/:productId' element={<Product />} />
+          <Route path='/product/:productId' element={<Product />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/loginsignup' element={<Loginsignup />} />
         </Routes>
