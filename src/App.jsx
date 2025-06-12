@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import Shop from './components/Pages/Shop';
 import ShopCategory from './components/Pages/ShopCategory';
 import Product from './components/Pages/Product';
+import Admin from './components/Admin/Admin'
 import Cart from './components/Pages/Cart';
 import Loginsignup from './components/Pages/Loginsignup';
 import './App.css';
@@ -29,6 +30,7 @@ function App() {
           <Route path='/kids' element={<ShopCategory banner={kids_banner}category="kid" />} />
           
           <Route path='/product' element={<Product />} />
+          <Route path='/admin' element={<Admin/>}/>
           <Route path='/product/:productId' element={<Product />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/loginsignup' element={<Loginsignup />} />
