@@ -24,7 +24,7 @@ const Admin = () => {
     } else {
       setFormData({ ...formData, [name]: value });
     }
-    setShowPreviews(false); // previews only after update
+    setShowPreviews(true); // previews only after update
   };
 
   const handleUpdate = () => {
@@ -34,11 +34,11 @@ const Admin = () => {
       setProductList(updatedList);
       setEditIndex(null);
     } else {
-      const newProduct = { ...formData }; // 👈 use provided id directly
+      const newProduct = { ...formData }; 
       setProductList([...productList, newProduct]);
     }
 
-    setShowPreviews(true); // 👈 show preview only after update
+    setShowPreviews(true); 
     setFormData({
       id: '',
       name: '',
@@ -63,13 +63,13 @@ const Admin = () => {
       new_price: '',
       old_price: '',
     });
-    setShowPreviews(false);
+    setShowPreviews(true);
   };
 
   const handleEdit = (index) => {
     setFormData(productList[index]);
     setEditIndex(index);
-    setShowPreviews(false);
+    setShowPreviews(true);
   };
 
   return (
@@ -89,11 +89,13 @@ const Admin = () => {
         </div>
         <div className='name'>
           <h1>Product Name</h1>
+          <hr/>
           <input type='text' name='name' value={formData.name} onChange={handleChange} />
           {showPreviews && formData.name && <p>{formData.name}</p>}
         </div>
         <div className='product-category'>
           <h1>Category</h1>
+          <hr/>
           <input type='text' name='category' value={formData.category} onChange={handleChange} />
           {showPreviews && formData.category && <p>{formData.category}</p>}
         </div>
